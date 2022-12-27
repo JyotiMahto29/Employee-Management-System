@@ -1,10 +1,10 @@
 Project Title : Employee Management System
 
 
-Task was to develop an ASP.NET MVC based web application 
-Created Database for employee, Users, and Department
-Created overall layout of website
-Map the database with Application
-Implemented the functionalities
+1. Task was to develop an ASP.NET MVC based web application 
+2. Created Database for employee, Users, and Department
+3. Created overall layout of website
+4. Map the database with Application
+5. Implemented the functionalities
 
 
