@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html>
+ 
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Employee Management</title>
+
+    <link href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" rel="stylesheet" />
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body style="background-image: url('../../Images/e2.jfif');background-repeat:no-repeat;background-size:cover">
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse" title="more options">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("Employee Management", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    @*<li>@Html.ActionLink("Home", "Index", "Home")</li>*@
+                    @if (Session["userName"] != null)
+                    {
+                        <h4 style="color:yellow" , class="nav navbar-right">WELCOME @Session["userName"] !!</h4>
+                        <li>@Html.ActionLink("Department", "Index", "deptMaster")</li>
+                        <li>@Html.ActionLink("Employee", "Index", "employeeMaster")</li>
+                        <li>@Html.ActionLink("LogOut", "Logout", "Login")</li>
+
+                    }
+                    else
+                    {
+                        <li>@Html.ActionLink("Register", "Add", "userMaster")</li>
+                        <li>@Html.ActionLink("Login", "Login", "Login")</li>
+
+                    }
+                </ul>
+
+                }
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year -Employee Management System</p>
+        </footer>
+    </div>
+
+    @*@Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/bootstrap")*@
+    @RenderSection("scripts", required: false)
+</body>
+</html>
